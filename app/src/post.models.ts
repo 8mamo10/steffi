@@ -2,8 +2,10 @@ import 'reflect-metadata';
 
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 
+import { User } from './user.models';
+
 @ObjectType()
-export class PostModels {
+export class Post {
   @Field((type) => Int)
   id: number;
 
@@ -16,8 +18,8 @@ export class PostModels {
   @Field((type) => String, { nullable: true })
   content?: string | null;
 
-  //@Field((type) => User, { nullable: true })
-  //author?: User | null;
+  @Field((type) => User, { nullable: true })
+  author?: User | null;
 
   @Field((type) => Int)
   authorId?: number;
