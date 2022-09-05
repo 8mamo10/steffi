@@ -8,7 +8,7 @@ import {
 } from '@nestjs/graphql';
 import { Inject } from '@nestjs/common';
 import { Post } from '../post.models';
-import { PrismaService } from 'prisma/prisma.service';
+import { PrismaService } from '../prisma.service';
 
 @InputType()
 export class PostCreateInput {

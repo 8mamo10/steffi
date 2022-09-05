@@ -4,7 +4,7 @@ import { Inject } from '@nestjs/common';
 
 import { User } from '../user.models';
 
-import { PrismaService } from 'prisma/prisma.service';
+import { PrismaService } from '../prisma.service';
 
 @InputType()
 export class UserCreateInput {
