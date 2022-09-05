@@ -7,7 +7,7 @@ import {
   Mutation,
 } from '@nestjs/graphql';
 import { Inject } from '@nestjs/common';
-import { Post } from '../post.models';
+import { Post } from './post.models';
 import { PrismaService } from '../prisma.service';
 
 @InputType()
