@@ -25,7 +25,12 @@ export class PostResolver {
 
   @Query((returns) => Post, { nullable: true })
   getPostById(@Args('id') id: number) {
-    return this.prismaService.post.findUnique({ where: { id } });
+    return this.prismaService.post.findUnique({
+      include: {
+        author: true,
+      },
+      where: { id },
+    });
   }
 
   @Query((returns) => [Post])
@@ -65,7 +70,6 @@ export class PostResolver {
   @Mutation((returns) => Post)
   createDraft(
     @Args('data') data: PostCreateInput,
-
     @Args('authorEmail') authorEmail: string,
   ) {
     return this.prismaService.post.create({
