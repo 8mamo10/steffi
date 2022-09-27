@@ -13,4 +13,4 @@ USER node
 COPY package*.json ./
 COPY --from=builder /usr/src/app/dist ./dist
 COPY --from=builder /usr/src/app/node_modules ./node_modules
-CMD ["sh", "-c", "node dist/main"]
+CMD ["sh", "-c", "node dist/src/main"]
