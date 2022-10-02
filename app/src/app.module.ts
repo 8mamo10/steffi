@@ -1,7 +1,7 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
 import { PostResolver } from './post/post.resolver';
 import { PrismaService } from './prisma.service';
 import { UserResolver } from './user/user.resolver';
@@ -14,6 +14,7 @@ import { UserResolver } from './user/user.resolver';
       //autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       autoSchemaFile: true,
     }),
+    ConfigModule,
   ],
   controllers: [],
   providers: [PostResolver, UserResolver, PrismaService],
