@@ -9,7 +9,7 @@ RUN npm prune --production
 
 FROM node:18 AS production
 WORKDIR /usr/src/app
-# USER node
+USER node
 COPY package*.json ./
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 COPY --from=builder /usr/src/app/prisma ./prisma
