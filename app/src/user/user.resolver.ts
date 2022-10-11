@@ -24,7 +24,6 @@ export class UserResolver {
     return this.prismaService.user.create({
       data: {
         name: data.name,
-
         email: data.email,
       },
     });
