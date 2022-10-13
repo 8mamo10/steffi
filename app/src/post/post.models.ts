@@ -1,7 +1,5 @@
 import 'reflect-metadata';
-
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-
 import { User } from '../user/user.models';
 
 @ObjectType()

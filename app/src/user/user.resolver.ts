@@ -1,9 +1,6 @@
 import { InputType, Field, Resolver, Args, Mutation } from '@nestjs/graphql';
-
 import { Inject } from '@nestjs/common';
-
 import { User } from './user.models';
-
 import { PrismaService } from '../prisma.service';
 
 @InputType()
