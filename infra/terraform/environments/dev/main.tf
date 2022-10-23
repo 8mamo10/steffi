@@ -11,3 +11,10 @@ module "cloudrun" {
   region           = local.region
   container_images = local.container_images
 }
+
+module "cloudsql" {
+  source = "../../modules/cloudsql"
+
+  project_id = local.project_id
+  region     = local.region
+}
